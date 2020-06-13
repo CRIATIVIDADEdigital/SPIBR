@@ -1,3 +1,6 @@
 [submodule "participantes"]
 	path = participantes
 	url = https://github.com/CRIATIVIDADEdigital/participantes-spibr
+[submodule "_participantes"]
+	path = _participantes
+	url = https://github.com/CRIATIVIDADEdigital/participantes-spibr
