@@ -28,9 +28,9 @@
         aspectRatio = height / width;
       }
       else {
-        aspectRatio = 2 - width / (height+140);
+        aspectRatio = height / width;
       }
-      
+      console.log("w:",width," h:", height, " ->", aspectRatio);
 
       // Wrap it in a DIV
       var div = document.createElement("div");
