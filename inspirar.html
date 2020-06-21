@@ -1,0 +1,116 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unboxing - Conhecendo o SPIKE Prime</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap 4 landing page template for developers and startups">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/recomendacoes/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="/recomendacoes/assets/css/styles.css">
+    
+</head> 
+
+<body>
+  
+    <div id="testimonials" class="testimonials-section">
+        <div class="container">
+            <p><a style="color:white" href="/">&larr; SPIBR</a></p>
+
+            <h2 class="section-title text-center">Alguns projetos para inspirar!</h2>
+        </div><!--//container-->
+        <style>
+            .white {color: white;}
+        </style>
+        {% for participante in site.participantes %}
+            {% for topicos in participante.conteudos %}
+                {% for topico in topicos.itens %}
+                    {% if topico.tag contains "inspirar" %}
+                      {% capture thecycle %}{% cycle 'esquerda', 'direita' %}{% endcapture %}
+                      {% if thecycle == "esquerda" %}
+                        <div class="item mx-auto">
+                            <div class="profile-holder">
+                                <img class="profile-image rounded-circle" src="/participantes/{{participante.foto}}" alt="foto">
+                            </div>
+                            <div class="quote-holder">
+                                <blockquote class="quote">
+                                    <p>{{topico.descricao}}<br>
+                                    {% if topico.tipo == "youtube" %}
+                                      <a class="white" target="_blank" href="https://www.youtube.com/embed/{{topico.id}}">&rarr; Youtube</a>
+                                    {% endif %}
+                                    {% if topico.tipo == "instagram" %}
+                                      <a class="white" target="_blank" href="https://www.instagram.com/p/{{topico.id}}/">&rarr; Instagram</a>
+                                    {% endif %}
+                                    {% if topico.tipo == "link" %}
+                                      <a class="white" target="_blank" href="{{ topico.link }}">&rarr; Link</a>
+                                    {% endif %}
+                                    </p>
+                                    <div class="quote-source">
+                                        <span class="name">{{participante.nome}},</span>
+                                        <span class="meta">{{participante.cidade}}</span>
+                                    </div><!--//quote-source-->
+                                </blockquote>
+                            </div><!--//quote-holder-->
+                        </div><!--//item-->
+                      {% endif %}
+                      {% if thecycle == "direita" %}
+                        <div class="item item-reversed mx-auto">
+                            <div class="profile-holder">
+                                <img class="profile-image rounded-circle" src="/participantes/{{participante.foto}}" alt="foto">
+                            </div>
+                            <div class="quote-holder">
+                                <blockquote class="quote">
+                                    <p>{{topico.descricao}}<br>
+                                        {% if topico.tipo == "youtube" %}
+                                        <a class="white" target="_blank" href="https://www.youtube.com/embed/{{topico.id}}">&rarr; Youtube</a>
+                                      {% endif %}
+                                      {% if topico.tipo == "instagram" %}
+                                        <a class="white" target="_blank" href="https://www.instagram.com/p/{{topico.id}}/">&rarr; Instagram</a>
+                                      {% endif %}
+                                      {% if topico.tipo == "link" %}
+                                        <a class="white" target="_blank" href="{{ topico.link }}">&rarr; Link</a>
+                                      {% endif %}
+                                      </p>
+                                    <div class="quote-source">
+                                        <span class="name">{{participante.nome}},</span>
+                                        <span class="meta">{{participante.cidade}}</span>
+                                    </div><!--//quote-source-->
+                                </blockquote>
+                            </div><!--//quote-holder-->
+                        </div><!--//item-->
+                      {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+
+    </div><!--//testimonials-->
+    
+    <footer class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+            
+        </div><!--//container-->
+    </footer>
+     
+    <!-- Javascript -->          
+    <script type="text/javascript" src="/recomendacoes/assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/recomendacoes/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/recomendacoes/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>     
+    <script type="text/javascript" src="/recomendacoes/assets/js/main.js"></script> 
+       
+</body>
+</html> 
+
