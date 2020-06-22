@@ -31,7 +31,8 @@
 </head> 
 
 <body>
-	
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v7.0&appId=2385506498151963&autoLogAppEvents=1" nonce="pbBOfZZz"></script>
 	<div class="main-wrapper">
 		<div class="container px-3 px-lg-5">
 			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
@@ -100,6 +101,10 @@
 										{% endif %}
 										{% if item.tipo == "link" %}
 										<p><a href="{{ item.link }}" target="_blank">Clique aqui para acessar.</a></p>
+										{% endif %}
+										{% if item.tipo == "facebook" %}
+										<div class="fb-video" data-href="{{item.link}}" data-show-text="false" data-width="">
+										</div>
 									  {% endif %}
 									</div>
 								</div><!--//item-->

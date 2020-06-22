@@ -54,6 +54,9 @@
                                     {% if topico.tipo == "link" %}
                                       <a class="white" target="_blank" href="{{ topico.link }}">&rarr; Link</a>
                                     {% endif %}
+                                    {% if topico.tipo == "facebook" %}
+                                      <a class="white" target="_blank" href="{{ topico.link }}">&rarr; Facebook</a>
+                                    {% endif %}
                                     </p>
                                     <div class="quote-source">
                                         <span class="name">{{participante.nome}},</span>
@@ -79,6 +82,9 @@
                                       {% endif %}
                                       {% if topico.tipo == "link" %}
                                         <a class="white" target="_blank" href="{{ topico.link }}">&rarr; Link</a>
+                                      {% endif %}
+                                      {% if topico.tipo == "facebook" %}
+                                        <a class="white" target="_blank" href="{{ topico.link }}">&rarr; Facebook</a>
                                       {% endif %}
                                       </p>
                                     <div class="quote-source">
