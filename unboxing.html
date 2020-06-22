@@ -32,7 +32,7 @@
         <style>
             .white {color: white;}
         </style>
-        {% for participante in site.participantes %}
+        {% for participante in site.participantes %} 
             {% for topicos in participante.conteudos %}
                 {% for topico in topicos.itens %}
                     {% if topico.tag contains "unboxing" %}
