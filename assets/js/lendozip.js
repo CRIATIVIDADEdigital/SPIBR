@@ -652,7 +652,6 @@ var ZipLoader = function(zipURL) {
                         tmp += "image/jpeg;base64,";
                         break;
                     case 'svg':
-                        alert("lendo");
                         tmp += "image/svg+xml;base64,";
                         break;
                 }
