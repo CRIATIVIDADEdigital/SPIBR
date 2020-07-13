@@ -1,0 +1,169 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SPIKE® Prime™ Influencers Brasil - Redes Sociais</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPIKE® Prime™ Influencers Brasil - Redes Sociais">
+    <meta name="author" content="CRIATIVIDADE.digital">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/recomendacoes/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="/recomendacoes/assets/css/styles.css">
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '565593004347030');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=565593004347030&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->    
+</head> 
+
+<body>
+  <style>
+		a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: gainsboro;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 135, 105);
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+	</style>
+    <div id="testimonials" class="testimonials-section">
+        <div class="container">
+            <p><a style="color:white" href="/">&larr; SPIBR</a></p>
+
+            <h2 class="section-title text-center">Siga os <b><i>Influencers</i></b> e confira em primeira mão os projetos publicados!</h2>
+        </div><!--//container-->
+        <style>
+            .white {color: white;}
+        </style>
+        {% for participante in site.participantes %} 
+                      {% capture thecycle %}{% cycle 'esquerda', 'direita' %}{% endcapture %}
+                      {% if thecycle == "esquerda" %}
+                        <div class="item mx-auto">
+                            <div class="profile-holder">
+                                <img class="profile-image rounded-circle" src="/participantes/{{participante.foto}}" alt="foto">
+                            </div>
+                            <div class="quote-holder">
+                                <blockquote class="quote">
+                                    <p><b>{{participante.nome}}</b><br>
+                                      <ul class="list-unstyled mb-0">
+                                        {% if participante.linkedin %}
+                                          <li class="mb-2"><i class="fab fa-linkedin fa-fw fa-lg mr-2 "></i><a target="_blank" class="resume-link" href="{{ participante.linkedin }}">Perfil LinkedIn</a></li>
+                                        {% endif %}
+                                        {% if participante.facebook %}
+                                        <li class="mb-2"><i class="fab fa-facebook fa-fw fa-lg mr-2"></i><a target="_blank" href=" {{ participante.facebook }}">Página Facebook</a></li>
+                                        {% endif %}
+                                        {% if participante.instagram %}
+                                        <li class="mb-2"><i class="fab fa-instagram fa-fw fa-lg mr-2"></i><a target="_blank" class="resume-link" href="https://instagram.com/{{ participante.instagram }}">{{ participante.instagram }}</a></li>
+                                        {% endif %}
+                                        {% if participante.youtube %}
+                                        <li class="mb-2"><i class="fab fa-youtube fa-fw fa-lg mr-2"></i><a target="_blank" class="resume-link" href="{{participante.youtube}}">Canal no Youtube</a></li>
+                                        {% endif %}
+                                        {% if participante.tiktok %}
+                                        <li class="mb-2"><i class="fab fa-tiktok fa-fw fa-lg mr-2"></i><a target="_blank" class="resume-link" href="{{participante.tiktok}}">Página no Tiktok</a></li>
+                                        {% endif %}
+                                        {% if participante.site %}
+                                        <li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a target="_blank" class="resume-link" href="https://{{ participante.site }}">{{ participante.site }}</a></li>
+                                        {% endif %}
+                                        {% if participante.cidade %}
+                                        <li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>{{ participante.cidade }}</li>
+                                        {% endif %}
+                                      </ul>
+                                     </p>
+                                    <div class="quote-source">
+                                    </div><!--//quote-source-->
+                                </blockquote>
+                            </div><!--//quote-holder-->
+                        </div><!--//item-->
+                      {% endif %}
+                      {% if thecycle == "direita" %}
+                        <div class="item item-reversed mx-auto">
+                            <div class="profile-holder">
+                                <img class="profile-image rounded-circle" src="/participantes/{{participante.foto}}" alt="foto">
+                            </div>
+                            <div style="text-align: right; right:0px;" class="quote-holder">
+                                <blockquote class="quote">
+                                  <p><b>{{participante.nome}}</b><br>
+                                    <ul class="list-unstyled mb-0">
+                                      {% if participante.linkedin %}
+                                        <li class="mb-2"><a target="_blank" class="resume-link" href="{{ participante.linkedin }}">Perfil LinkedIn</a>&nbsp;&nbsp;<i class="fab fa-linkedin fa-fw fa-lg mr-2 "></i></li>
+                                      {% endif %}
+                                      {% if participante.facebook %}
+                                      <li class="mb-2"><a target="_blank" href=" {{ participante.facebook }}">Página Facebook</a>&nbsp;&nbsp;<i class="fab fa-facebook fa-fw fa-lg mr-2"></i></li>
+                                      {% endif %}
+                                      {% if participante.instagram %}
+                                      <li class="mb-2"><a target="_blank" class="resume-link" href="https://instagram.com/{{ participante.instagram }}">{{ participante.instagram }}</a>&nbsp;&nbsp;<i class="fab fa-instagram fa-fw fa-lg mr-2"></i></li>
+                                      {% endif %}
+                                      {% if participante.youtube %}
+                                      <li class="mb-2"><a target="_blank" class="resume-link" href="{{participante.youtube}}">Canal no Youtube</a>&nbsp;&nbsp;<i class="fab fa-youtube fa-fw fa-lg mr-2"></i></li>
+                                      {% endif %}
+                                      {% if participante.tiktok %}
+                                      <li class="mb-2"><a target="_blank" class="resume-link" href="{{participante.tiktok}}">Página no Tiktok</a>&nbsp;&nbsp;<i class="fab fa-tiktok fa-fw fa-lg mr-2"></i></li>
+                                      {% endif %}
+                                      {% if participante.site %}
+                                      <li class="mb-2"><a target="_blank" class="resume-link" href="https://{{ participante.site }}">{{ participante.site }}</a>&nbsp;&nbsp;<i class="fas fa-globe fa-fw fa-lg mr-2"></i></li>
+                                      {% endif %}
+                                      {% if participante.cidade %}
+                                      <li class="mb-0">{{ participante.cidade }}&nbsp;&nbsp;<i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i></li>
+                                      {% endif %}
+                                    </ul>
+                                   </p>
+                                  <div class="quote-source">
+                                    </div><!--//quote-source-->
+                                </blockquote>
+                            </div><!--//quote-holder-->
+                        </div><!--//item-->
+                      {% endif %}
+        {% endfor %}
+
+    </div><!--//testimonials-->
+    
+    <footer class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+			<small class="copyright">Designed with <i class="fas fa-heart" style="color: #EC645E;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a>. Organized by <a href="https://criatividade.digital" target="_blank"><b>CRIATIVIDADE.digital</b></a></small>
+            
+            
+        </div><!--//container-->
+    </footer>
+     
+    <!-- Javascript -->          
+    <script type="text/javascript" src="/recomendacoes/assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/recomendacoes/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/recomendacoes/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>     
+    <script type="text/javascript" src="/recomendacoes/assets/js/main.js"></script> 
+       
+</body>
+</html> 
+
