@@ -67,7 +67,8 @@ a:active {
         <style>
             .white {color: white;}
         </style>
-        {% for participante in site.participantes %} 
+        {% assign participantes_order = site.participantes | sort:"nome" %}
+        {% for participante in participantes_order  %} 
                       {% capture thecycle %}{% cycle 'esquerda', 'direita' %}{% endcapture %}
                       {% if thecycle == "esquerda" %}
                         <div class="item mx-auto">
